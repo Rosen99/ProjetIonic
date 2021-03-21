@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Mon magasin</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="text-align:center">
+  <h2>Un jeu à vendre ?</h2>
+  <button ion-button (click)="onGoToCreate()">Ajouter</button>
+
+  <h2>Liste de mes jeux à vendre</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 *ngFor="let game of games">
+        <div>
+          <ion-list (click)="onGoToGame(game.data.title, game.id)">
+            <ion-item>
+              <img [src]="game.data.pictureLink" [alt]="game.data.title">
+            </ion-item>
+            <ion-item>
+                {{game.data.title}}
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

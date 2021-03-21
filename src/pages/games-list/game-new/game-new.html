@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Information sur votre jeu</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Image (url)</ion-label>
+    <ion-input type="text" [(ngModel)]="game.pictureLink"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Nom</ion-label>
+    <ion-input type="text" [(ngModel)]="game.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Plateforme</ion-label>
+    <ion-input type="text" [(ngModel)]="game.plateforme"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Date de sortie</ion-label>
+    <ion-input type="text" [(ngModel)]="game.releaseDate"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Concepteur</ion-label>
+    <ion-input type="text" [(ngModel)]="game.designer"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Language</ion-label>
+    <ion-input type="text" [(ngModel)]="game.language"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Prix</ion-label>
+    <ion-input type="number" [(ngModel)]="game.price"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Disponible ?</ion-label>
+    <ion-toggle [(ngModel)]="game.available"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label>Résumé</ion-label>
+    <ion-textarea rows="20" [(ngModel)]="game.summary"></ion-textarea>
+  </ion-item>
+  <br>
+  <div class="text-center">
+    <button ion-button (click)="onAdd()">Enregistrer</button>
+  </div>
+</ion-content>

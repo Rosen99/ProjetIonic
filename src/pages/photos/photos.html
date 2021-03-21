@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Appareil Photo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="text-align:center">
+  <p>Prendre une photo de votre jeu avant de le vendre</p>
+  <img *ngIf="imgUrl" [src]="imgUrl">
+  <button ion-button round icon-only (click)="onPicture()">
+    <ion-icon name="camera"></ion-icon>
+  </button>
+</ion-content>

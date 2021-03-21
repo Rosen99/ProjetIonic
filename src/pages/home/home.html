@@ -1,14 +1,102 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Acheter un jeu
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+  <h2 style="text-align:center">Vous recherchez un jeu ?</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <div>
+          <ion-list (click)="onAchat()">
+            <ion-item>
+              <img src="assets/imgs/minecraft.jpg" alt="Minecraft">
+            </ion-item>
+            <ion-item>
+              Minecraft
+              <p class="platform">PC</p>
+              <p class="price">15 €</p>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <div>
+          <ion-list (click)="onAchat()">
+            <ion-item>
+              <img src="assets/imgs/Overwatch.jpg" alt="Overwatch">
+            </ion-item>
+            <ion-item>
+              Overwatch
+              <p class="platform">Switch</p>
+              <p class="price">20 €</p>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <div>
+          <ion-list (click)="onAchat()">
+            <ion-item>
+              <img src="assets/imgs/Cod2.jpg" alt="Cod2">
+            </ion-item>
+            <ion-item>
+              Call of Duty 2
+              <p class="platform">PS2</p>
+              <p class="price">2 €</p>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <div>
+          <ion-list (click)="onAchat()">
+            <ion-item>
+              <img src="assets/imgs/Cyberpunk.jpg" alt="Cyberpunk">
+            </ion-item>
+            <ion-item>
+              Cyberpunk
+              <p class="platform">PC</p>
+              <p class="price">30 €</p>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <div>
+          <ion-list (click)="onAchat()">
+            <ion-item>
+              <img src="assets/imgs/Deadbydaylight.jpg" alt="Deadbydaylight">
+            </ion-item>
+            <ion-item>
+              Dead by daylight
+              <p class="platform">PC</p>
+              <p class="price">14 €</p>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <div>
+          <ion-list (click)="onAchat()">
+            <ion-item>
+              <img src="assets/imgs/RedDeadRedemption2.jpg" alt="RedDeadRedemption2">
+            </ion-item>
+            <ion-item>
+              Red Dead Redemption 2
+              <p class="platform">PC</p>
+              <p class="price">23 €</p>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list style="text-align:center">
+    <button class="ion-text-center" ion-button>Voir plus</button>
+  </ion-list>
 </ion-content>

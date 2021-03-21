@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button (click)="onGoAccessModif()">Rendre Modifiable</button>
+
+  <div *ngIf="modif; then content else otherContent"></div>
+  <ng-template #content>
+    <ion-item>
+      <ion-label>Image (url)</ion-label>
+      <ion-input type="text" [(ngModel)]="game.data.pictureLink"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nom</ion-label>
+      <ion-input type="text" [(ngModel)]="game.data.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Plateforme</ion-label>
+      <ion-input type="text" [(ngModel)]="game.data.plateforme"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date de sortie</ion-label>
+      <ion-input type="text" [(ngModel)]="game.data.releaseDate"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Designeur</ion-label>
+      <ion-input type="text" [(ngModel)]="game.data.designer"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Language</ion-label>
+      <ion-input type="text" [(ngModel)]="game.data.language"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Prix</ion-label>
+      <ion-input type="number" [(ngModel)]="game.data.price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Disponible ?</ion-label>
+      <ion-toggle [(ngModel)]="game.data.available"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Résumé</ion-label>
+      <ion-textarea rows="20" [(ngModel)]="game.data.summary"></ion-textarea>
+    </ion-item>
+    <br>
+    <div class="text-center">
+      <button ion-button (click)="onModif()">Modifier</button>
+    </div>
+  </ng-template>
+  <ng-template #otherContent>
+    <ion-grid *ngIf="game">
+      <ion-row>
+        <ion-col col-6>
+          <strong>Disponible :</strong>
+          <ion-icon *ngIf="game.data.available" name="checkmark"></ion-icon>
+          <ion-icon *ngIf="!game.data.available" name="close-circle"></ion-icon>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button (click)="onDelete()">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <img [src]="game.data.pictureLink" [alt]="game.data.title">
+        </ion-col>
+        <ion-col col-6>
+          <strong>Nom :</strong> <br>
+          {{game.data.title}} <br>
+          <strong>Plateforme :</strong><br>
+          {{game.data.platform}} <br>
+          <strong>Date de sortie :</strong> <br>
+          {{game.data.releaseDate}} <br>
+          <strong>Concepteur :</strong> <br>
+          {{game.data.designer}} <br>
+          <strong>Language :</strong> <br>
+          {{game.data.language}} <br>
+          <strong>Prix :</strong> <br>
+          {{game.data.price}} €
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <strong>Résumé :</strong>
+          <p class="text-justify">
+            {{game.data.summary}}
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-template>
+</ion-content>
